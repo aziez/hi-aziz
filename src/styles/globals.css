@@ -68,3 +68,15 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: #ff0000;
+  transform-origin: 0%;
+  z-index: 1000;
+}

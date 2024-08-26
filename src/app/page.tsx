@@ -1,16 +1,22 @@
-import dynamic from "next/dynamic";
+import SmoothScrollLayout from "@/components/ui/smoth-scroll";
+import { Hero } from "@/layouts/Hero/page";
+import PageWrapper from "./page-wrapper";
 
-const ThreeScene = dynamic(() => import("@/components/three-scene"), {
-  ssr: false,
-});
-const ScrollAnimation = dynamic(() => import("@/components/scroll-animation"), {
-  ssr: false,
-});
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      {/* <ThreeScene /> */}
-      <ScrollAnimation />
-    </main>
+    <SmoothScrollLayout>
+      <Hero />
+
+      <main className="flex min-h-screen flex-col items-center justify-between p-24">
+        <PageWrapper>
+          <h1>helloooo im content </h1>
+          <h1>helloooo im content </h1>
+          <h1>helloooo im content </h1>
+          <h1>helloooo im content </h1>
+          <h1>helloooo im content </h1>
+          <h1>helloooo im content </h1>
+        </PageWrapper>
+      </main>
+    </SmoothScrollLayout>
   );
 }
