@@ -1,5 +1,5 @@
 "use client";
-import Scene from "@/components/Scene";
+import Scene from "@/components/hero/Scene";
 import { Button } from "@/components/ui/button";
 import { Cover } from "@/components/ui/cover";
 import { BorderBeam } from "@/components/ui/moving-border";
@@ -8,7 +8,9 @@ import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import dynamic from "next/dynamic";
 import React from "react";
 
-const Scene3D = dynamic(() => import("@/components/Scene"), { ssr: false });
+const Scene3D = dynamic(() => import("@/components/hero/Scene"), {
+  ssr: false,
+});
 
 export function Hero() {
   return (

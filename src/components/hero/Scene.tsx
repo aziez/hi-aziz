@@ -3,7 +3,8 @@ import React, { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import Model from "./model";
-import { SparklesCore } from "./ui/sparkles";
+import { SparklesCore } from "../ui/sparkles";
+import Cursor3D from "../cursor3D";
 
 export default function Scene() {
   const [scrollY, setScrollY] = useState(0);
@@ -34,7 +35,7 @@ export default function Scene() {
       <Suspense fallback={null}>
         <Model scrollY={scrollY} />
       </Suspense>
-      {/* <OrbitControls enableZoom={true} /> */}
+      <Cursor3D />
     </Canvas>
   );
 }
