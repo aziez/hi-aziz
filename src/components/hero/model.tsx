@@ -8,12 +8,14 @@ Title: Polygon future character
 */
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useFrame, useGraph, useThree } from "@react-three/fiber";
-import { useGLTF, useAnimations } from "@react-three/drei";
+import { useGLTF, useAnimations, Html } from "@react-three/drei";
 import { SkeletonUtils } from "three-stdlib";
 import * as THREE from "three";
 import { GLTF } from "three-stdlib";
+import { Tooltip, TooltipContent, TooltipProvider } from "../ui/tooltip";
+import Link from "next/link";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -41,6 +43,7 @@ export default function Model({
   const clone = React.useMemo(() => SkeletonUtils.clone(scene), [scene]);
   const { nodes, materials } = useGraph(clone) as GLTFResult;
   const { actions } = useAnimations(animations, meshRef);
+  const [showTooltip, setShowTooltip] = useState(false);
 
   const { viewport } = useThree();
 
@@ -59,13 +62,18 @@ export default function Model({
       ref={meshRef}
       position={position ?? [0, 0, 0]}
       scale={[1, 1, 1]}
-      castShadow visible={true} receiveShadow={true} frustumCulled={true} isGroup={true}
+      castShadow
+      visible={true}
+      receiveShadow={true}
+      frustumCulled={true}
+      isGroup={true}
     >
       <group name="Sketchfab_Scene">
         <group
           name="Sketchfab_model"
           rotation={[-Math.PI / 2, 0, 0]}
           scale={165.943}
+          onClick={() => setShowTooltip(!showTooltip)}
         >
           <group name="Salutefbx" rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
             <group name="Object_2">
@@ -109,6 +117,22 @@ export default function Model({
             </group>
           </group>
         </group>
+        <Html position={[-0.1, 2.8, 0.1]} center>
+          <TooltipProvider>
+            <Tooltip open={showTooltip}>
+              <TooltipContent className="bg-primary  text-white">
+                model author:{" "}
+                <Link
+                  href={"https://sketchfab.com/dejesuscamarilloo"}
+                  target="_blank"
+                >
+                  Builder123YT
+                </Link>
+                <div className="absolute w-3 h-3 bg-primary rotate-45 -bottom-1 transform -translate-x-1/2" />
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        </Html>
       </group>
     </group>
   );

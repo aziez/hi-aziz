@@ -2,6 +2,7 @@
 import React, { useRef } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Mesh } from "three";
+import { Perf } from "r3f-perf";
 
 function Box(props: JSX.IntrinsicElements["mesh"]) {
   const meshRef = useRef<Mesh>(null!);
@@ -19,6 +20,7 @@ export default function ThreeScene() {
   return (
     <>
       <Canvas>
+        <Perf position="top-left" />
         <rectAreaLight position={[-1.36, 0.94, 2.34]} />
         <ambientLight
           intensity={0.5}

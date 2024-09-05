@@ -5,6 +5,7 @@ import { SparklesCore } from "@/components/ui/sparkles";
 import InfoCard from "@/components/about/info-card";
 import { OrbitControls } from "@react-three/drei";
 import dynamic from "next/dynamic";
+import { Perf } from "r3f-perf";
 
 const HoloScene = dynamic(() => import("@/components/about/holo"), {
   ssr: false,
@@ -24,10 +25,18 @@ const AboutPage = () => {
       <div className="flex flex-col lg:flex-row min-h-screen">
         <div className="lg:w-1/2 h-[50vh] lg:h-auto relative">
           <Canvas camera={{ position: [0, 0, 5], fov: 50 }}>
+            {/* <Perf position="top-left" /> */}
+
             <ambientLight intensity={0.5} />
             <pointLight position={[10, 10, 10]} />
             <HoloScene />
-            <OrbitControls enableZoom={true} />
+            <OrbitControls
+              enableZoom={false}
+              enablePan={false}
+              enableRotate={false}
+              target={[0, 1.8, 0]}
+              autoRotate
+            />
           </Canvas>
         </div>
         <div className="lg:w-1/2 p-4 lg:p-8 overflow-y-auto">

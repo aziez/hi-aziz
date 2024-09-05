@@ -5,6 +5,7 @@ import { OrbitControls } from "@react-three/drei";
 import Model from "./model";
 import { SparklesCore } from "../ui/sparkles";
 import Cursor3D from "../cursor3D";
+import { Perf } from "r3f-perf";
 
 export default function Scene() {
   const [scrollY, setScrollY] = useState(0);
@@ -17,6 +18,8 @@ export default function Scene() {
 
   return (
     <Canvas>
+      {/* <Perf position="top-left" /> */}
+
       <rectAreaLight
         position={[0, 0, 0]}
         color={"#ffffff"}
@@ -35,6 +38,14 @@ export default function Scene() {
       <Suspense fallback={null}>
         <Model scrollY={scrollY} />
       </Suspense>
+
+      <OrbitControls
+        // enableZoom={false}
+        // enablePan={false}
+        // enableRotate={false}
+        target={[0, 1, 0]}
+        autoRotate
+      />
       <Cursor3D />
     </Canvas>
   );
