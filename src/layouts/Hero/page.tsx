@@ -49,11 +49,11 @@ export function Hero() {
           className="text-white font-mono text-pretty my-5"
           words={"Front end Web Developer | Full Stack Javascript"}
         />
-        {/* <p className="text-white font-mono text-md">
+        <p className="text-white font-mono text-md mb-4">
           Dedicated to pushing the boundaries of design and functionality to
           craft user-centric web experiences that captivate and leave a lasting
           impression.
-        </p> */}
+        </p>
 
         <Button asChild className="h-12 relative w-48 mx-5">
           <Link
@@ -61,6 +61,11 @@ export function Hero() {
             target="_blank"
           >
             <BorderBeam /> My Resume
+          </Link>
+        </Button>
+        <Button variant={"outline"} asChild className="h-12 relative w-48 mx-5">
+          <Link href="/explore">
+            <BorderBeam /> Explore Our Portfolio
           </Link>
         </Button>
       </div>

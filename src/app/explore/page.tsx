@@ -3,6 +3,7 @@ import SkyBox from "@/components/sky-box";
 import SmoothScrollLayout from "@/components/ui/smoth-scroll";
 import { Hero } from "@/layouts/Hero/page";
 import {
+  Center,
   Environment,
   Html,
   OrbitControls,
@@ -11,9 +12,11 @@ import {
 import { Canvas } from "@react-three/fiber";
 import RoomModel from "@/webGL/Room";
 import ModelBee from "@/webGL/Bee";
+import ModelAvatar from "@/webGL/Avatar";
 import { Suspense, useRef, useState } from "react";
 import { Group } from "three";
 import { Physics } from "@react-three/cannon";
+import ThirdPersonControls from "@/hooks/use-third-person-control";
 
 export default function Home() {
   const beeRef = useRef<Group>(null);
@@ -39,7 +42,7 @@ export default function Home() {
   }
   return (
     <div className="w-screen h-screen">
-      <Canvas camera={{ near: 0.5, position: [0.1, 0, 0] }}>
+      <Canvas camera={{ near: 0.5, position: [0.2, 0, 0] }}>
         <ambientLight intensity={0.3} color={"#ffddcc"} />
         <directionalLight ref={lightRef} intensity={1} position={[5, 5, 5]} />
         <Environment near={1} far={1000} resolution={256} preset="warehouse" />
@@ -47,7 +50,9 @@ export default function Home() {
         <Physics gravity={[0, -50, 0]}>
           <Suspense fallback={<Loading />}>
             <RoomModel />
-            <ModelBee ref={beeRef} />
+            {/* <ModelBee ref={beeRef} /> */}
+            <ModelAvatar ref={beeRef} />
+            <ThirdPersonControls target={beeRef} />
           </Suspense>
         </Physics>
 
