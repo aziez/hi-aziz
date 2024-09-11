@@ -42,17 +42,16 @@ export default function Home() {
   }
   return (
     <div className="w-screen h-screen">
-      <Canvas camera={{ near: 0.5, position: [0.2, 0, 0] }}>
+      <Canvas>
         <ambientLight intensity={0.3} color={"#ffddcc"} />
         <directionalLight ref={lightRef} intensity={1} position={[5, 5, 5]} />
         <Environment near={1} far={1000} resolution={256} preset="warehouse" />
         <SkyBox />
         <Physics gravity={[0, -50, 0]}>
           <Suspense fallback={<Loading />}>
-            <RoomModel />
-            {/* <ModelBee ref={beeRef} /> */}
-            <ModelAvatar ref={beeRef} />
-            <ThirdPersonControls target={beeRef} />
+            <RoomModel rotation={[0, 0, 0]} />
+            <ModelAvatar position={[-5, -1.5, 0]} rotation={[0, 160, 0]} />
+            {/* <ThirdPersonControls target={beeRef} /> */}
           </Suspense>
         </Physics>
 
