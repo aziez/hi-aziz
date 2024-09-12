@@ -1,9 +1,9 @@
 "use client";
 import React, { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import { Center, OrbitControls } from "@react-three/drei";
+import { Center, Environment, OrbitControls } from "@react-three/drei";
+import ModelAvatar from "@/webGL/Avatar";
 import Model from "./model";
-import { SparklesCore } from "../ui/sparkles";
 import Cursor3D from "../cursor3D";
 import { Perf } from "r3f-perf";
 
@@ -17,7 +17,7 @@ export default function Scene() {
   }, []);
 
   return (
-    <Canvas linear dpr={3}>
+    <Canvas linear dpr={3} camera={{ near: 0.1, far: 300, fov: 60 }}>
       {/* <Perf position="top-left" /> */}
 
       <rectAreaLight
@@ -27,27 +27,25 @@ export default function Scene() {
         height={0.02}
         frustumCulled={false}
       />
-      <ambientLight castShadow intensity={1} position={[-0.38, 0.18, -0.38]} />
-      <pointLight
-        position={[0, 0.08, 0.46]}
-        intensity={10}
-        color={"#ff3838"}
-        castShadow={true}
-        distance={10}
-      />
+      <Environment near={1} far={1000} resolution={256} preset="warehouse" />
+      <ambientLight intensity={0.3} color={"#ffddcc"} />
       <Center position={[0, 1, 0]}>
         <Suspense fallback={null}>
-          <Model scrollY={scrollY} />
+          <ModelAvatar scrollY={scrollY} />
         </Suspense>
       </Center>
 
       <OrbitControls
         target={[0, 1, 0]}
-        autoRotate
-        minPolarAngle={0.2}
-        maxPolarAngle={1.22}
+        // autoRotate
+        minDistance={2}
+        maxDistance={2}
+        minPolarAngle={Math.PI / 2}
+        maxPolarAngle={Math.PI / 2}
+        enableZoom={true}
+        enablePan={true}
+        zoomSpeed={0.3}
       />
-      <Cursor3D />
     </Canvas>
   );
 }

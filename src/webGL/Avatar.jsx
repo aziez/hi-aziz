@@ -8,15 +8,13 @@ import * as THREE from "three";
 export default function ModelAvatar(props) {
   const group = useRef();
   const avatarRef = useRef();
-  const controlRef = useRef();
   const { forward, backward, left, right } = usePlayerControls(); // Player controls (WASD/Arrow keys)
-  const { camera } = useThree();
 
   const { nodes, materials, animations } = useGLTF("/avatar.glb");
   const { actions } = useAnimations(animations, group);
 
   const [actionName, setAction] = useState({
-    action: "Idle",
+    action: "GesturePointing",
     during: false,
   });
 
@@ -24,72 +22,57 @@ export default function ModelAvatar(props) {
   const direction = new THREE.Vector3(); // Movement direction
 
   useEffect(() => {
-    // const initialPosition = new THREE.Vector3(0, 0, 0); // Initial camera position
-    // controlRef.current.target = initialPosition;
-    // camera.position.set(0, 2, 5); // Initial camera distance from the player
-    // camera.rotation.set(0, 250, 0);
-    // camera.lookAt(initialPosition);
+    console.log(actions, "Aksi");
+    // GestureCheering;
+    // GestureClapping;
+    // GestureDanceTwist;
+    // GestureGreeting;
+    // GesturePointing;
+    // GestureWaving;
+    // Idle;
+    // Run;
+    // Turn;
+    // Walk;
+    // WalkBackward;
 
     if (actions[actionName.action]) {
       actions[actionName.action].play();
       return () => actions[actionName.action].stop();
     }
-  }, [camera, actions, actionName.action]);
+  }, [actions, actionName.action]);
 
-  useEffect(() => {
-    let newActionName;
-
-    if (forward) {
-      newActionName = "Run"; // Set to "Walk" if you have a slower animation
-    } else if (backward) {
-      newActionName = "WalkBackward";
-    } else if (!backward && !forward && (left || right)) {
-      newActionName = "Turn";
-    } else {
-      newActionName = "Idle";
-    }
-
-    setAction({ action: newActionName, during: true });
-
-    if (left) controlRef.current.autoRotateSpeed = -50;
-    else if (right) controlRef.current.autoRotateSpeed = 50;
-    else controlRef.current.autoRotateSpeed = 0;
-  }, [backward, forward, left, right]);
-
-  useFrame(() => {
-    if (avatarRef.current) {
-      // Calculate movement direction based on the camera orientation
-      direction.set(0, 0, 0);
-      if (forward) direction.z = -1;
-      if (backward) direction.z = 1;
-      if (left) direction.x = -1;
-      if (right) direction.x = 1;
-
-      // Normalize direction and apply speed
-      direction.normalize().multiplyScalar(speed);
-
-      // Update player position
-      avatarRef.current.position.add(direction);
-
-      // Make the camera follow the player
-      const playerPosition = avatarRef.current.position.clone();
-      camera.position.lerp(
-        playerPosition.clone().add(new THREE.Vector3(0, 2, 5)),
-        0.1
-      ); // Smooth camera following
-      camera.lookAt(playerPosition);
-    }
-  });
+  //   useEffect(() => {
+  //     let newActionName;
+  //
+  //     if (forward) {
+  //       newActionName = "Run"; // Set to "Walk" if you have a slower animation
+  //     } else if (backward) {
+  //       newActionName = "WalkBackward";
+  //     } else if (!backward && !forward && (left || right)) {
+  //       newActionName = "Turn";
+  //     } else {
+  //       newActionName = "Idle";
+  //     }
+  //
+  //     setAction({ action: newActionName, during: true });
+  //   }, [backward, forward, left, right]);
+  //
+  //   useFrame(() => {
+  //     if (avatarRef.current) {
+  //       // Calculate movement direction based on the camera orientation
+  //       direction.set(0, 0, 0);
+  //       if (forward) direction.z = -1;
+  //       if (backward) direction.z = 1;
+  //       if (left) direction.x = -1;
+  //       if (right) direction.x = 1;
+  //
+  //       direction.normalize().multiplyScalar(speed);
+  //       avatarRef.current.position.add(direction);
+  //     }
+  //   });
 
   return (
     <>
-      <OrbitControls
-        ref={controlRef}
-        rotation={[0, 250, 0]}
-        enableZoom={false} // Disable zoom so the camera stays at a fixed distance
-        enablePan={false} // Disable panning
-        enableRotate={false} // Disable rotation (controlled manually)
-      />
       <group ref={avatarRef} {...props}>
         <group ref={group} dispose={null} scale={0.8}>
           <group name="Scene">

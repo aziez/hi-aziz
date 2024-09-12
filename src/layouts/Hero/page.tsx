@@ -1,7 +1,10 @@
 "use client";
 import Scene from "@/components/hero/Scene";
+import BlurIn from "@/components/ui/blur-in";
 import { Button } from "@/components/ui/button";
 import { Cover } from "@/components/ui/cover";
+import HyperText from "@/components/ui/hyper-text";
+import LetterPullup from "@/components/ui/latter-pull-up";
 import { BorderBeam } from "@/components/ui/moving-border";
 import { SparklesCore } from "@/components/ui/sparkles";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
@@ -29,31 +32,36 @@ export function Hero() {
         />
       </div>
 
-      <div className="absolute h-full w-full">
+      <div className="absolute h-full w-full z-0">
         <Scene3D />
       </div>
       <div className="container">
         <div className="h-[10rem] flex items-center justify-center">
           <TextHoverEffect text="HELLO" automatic duration={100} />
         </div>
-        {/* <h1 className="md:text-9xl font-extrabold text-3xl lg:text-7xl text-center text-white">
-          HELLO
-        </h1> */}
-        <Cover>
-          <h2 className="text-xl md:text-2xl font-extrabold">
-            Hi...👋🏻👋🏻 Im Aziez..👨🏻
-          </h2>
-        </Cover>
-        <TextGenerateEffect
-          filter={true}
-          className="text-white font-mono text-pretty my-5"
-          words={"Front end Web Developer | Full Stack Javascript"}
+        <LetterPullup
+          delay={0.3}
+          words="HI... M ABDUL AZIZ"
+          className="text-xl md:text-2xl font-extrabold text-white"
         />
-        <p className="text-white font-mono text-md mb-4">
-          Dedicated to pushing the boundaries of design and functionality to
+
+        <div className="flex flex-col gap-0 space-y-0 mb-4 items-center justify-center">
+          <HyperText
+            duration={30}
+            className="text-white font-mono text-md"
+            text="FRONT END DEVELOPER"
+          />
+          <HyperText
+            className="text-white font-mono text-md"
+            text="FULL STACK JAVASCRIPT"
+          />
+        </div>
+        <BlurIn
+          className="text-white font-mono text-md mb-4 w-full"
+          word="Dedicated to pushing the boundaries of design and functionality to
           craft user-centric web experiences that captivate and leave a lasting
-          impression.
-        </p>
+          impression."
+        />
 
         <Button asChild className="h-12 relative w-48 mx-5">
           <Link
@@ -61,11 +69,6 @@ export function Hero() {
             target="_blank"
           >
             <BorderBeam /> My Resume
-          </Link>
-        </Button>
-        <Button variant={"outline"} asChild className="h-12 relative w-48 mx-5">
-          <Link href="/explore">
-            <BorderBeam /> Explore Our Portfolio
           </Link>
         </Button>
       </div>
