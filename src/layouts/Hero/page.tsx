@@ -12,55 +12,43 @@ import { TextHoverEffect } from "@/components/ui/text-hover";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import React from "react";
+import { DATA } from "@/data/resume";
+import ScrollAnimated from "@/components/scroll-animated";
 
 const Scene3D = dynamic(() => import("@/components/hero/Scene"), {
   ssr: false,
 });
 
 export function Hero() {
+  const name = DATA.name;
   return (
-    <div className="h-screen p-4 relative w-full bg-black flex flex-col items-center justify-center gap-4 text-center">
-      <div className="w-full absolute inset-0 h-screen">
-        <SparklesCore
-          id="tsparticlesfullpage"
-          background="transparent"
-          minSize={0.6}
-          maxSize={1.4}
-          particleDensity={100}
-          className="w-full h-full"
-          particleColor="#FFFFFF"
-        />
-      </div>
-
-      <div className="absolute h-full w-full z-0">
+    <div className="h-screen p-4 relative w-full flex flex-col items-center justify-center gap-4 text-center">
+      <div className="absolute h-full w-full z-0 overflow-hidden">
         <Scene3D />
       </div>
       <div className="container">
-        <div className="h-[10rem] flex items-center justify-center">
+        <div className="h-[10rem] flex flex-col items-center justify-center z-10">
           <TextHoverEffect text="HELLO" automatic duration={100} />
         </div>
         <LetterPullup
           delay={0.3}
-          words="HI... M ABDUL AZIZ"
+          words={`Hi...I'm ${name.toString()}`}
           className="text-xl md:text-2xl font-extrabold text-white"
         />
 
         <div className="flex flex-col gap-0 space-y-0 mb-4 items-center justify-center">
-          <HyperText
-            duration={30}
-            className="text-white font-mono text-md"
-            text="FRONT END DEVELOPER"
-          />
-          <HyperText
-            className="text-white font-mono text-md"
-            text="FULL STACK JAVASCRIPT"
-          />
+          {DATA.roles.map((role, index) => (
+            <HyperText
+              key={index}
+              duration={30}
+              className="text-white font-mono text-md"
+              text={role}
+            />
+          ))}
         </div>
         <BlurIn
           className="text-white font-mono text-md mb-4 w-full"
-          word="Dedicated to pushing the boundaries of design and functionality to
-          craft user-centric web experiences that captivate and leave a lasting
-          impression."
+          word={DATA.description}
         />
 
         <Button asChild className="h-12 relative w-48 mx-5">
@@ -71,6 +59,9 @@ export function Hero() {
             <BorderBeam /> My Resume
           </Link>
         </Button>
+      </div>
+      <div className="absolute bottom-0">
+        <ScrollAnimated targetId="about" text="about" />
       </div>
     </div>
   );

@@ -6,6 +6,11 @@ import ModelAvatar from "@/webGL/Avatar";
 import Model from "./model";
 import Cursor3D from "../cursor3D";
 import { Perf } from "r3f-perf";
+import dynamic from "next/dynamic";
+
+const SkyBox = dynamic(() => import("../sky-box"), {
+  ssr: false,
+});
 
 export default function Scene() {
   const [scrollY, setScrollY] = useState(0);
@@ -21,14 +26,16 @@ export default function Scene() {
       {/* <Perf position="top-left" /> */}
 
       <rectAreaLight
-        position={[0, 0, 0]}
+        position={[0, -6, 0]}
         color={"#ffffff"}
-        width={2}
+        width={10}
         height={0.02}
-        frustumCulled={false}
+        frustumCulled={true}
+        intensity={3}
       />
-      <Environment near={1} far={1000} resolution={256} preset="warehouse" />
-      <ambientLight intensity={0.3} color={"#ffddcc"} />
+      <SkyBox />
+      <Environment near={1} far={1000} resolution={100} preset="dawn" />
+      <ambientLight intensity={1} color={"#ffff"} castShadow />
       <Center position={[0, 1, 0]}>
         <Suspense fallback={null}>
           <ModelAvatar scrollY={scrollY} />
@@ -37,7 +44,7 @@ export default function Scene() {
 
       <OrbitControls
         target={[0, 1, 0]}
-        // autoRotate
+        autoRotate
         minDistance={2}
         maxDistance={2}
         minPolarAngle={Math.PI / 2}
