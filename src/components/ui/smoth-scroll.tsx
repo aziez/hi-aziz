@@ -18,10 +18,10 @@ const SmoothScrollLayout: React.FC<SmoothScrollLayoutProps> = ({
   });
 
   return (
-    <>
+    <div className="bg-[#154895] text-white dark:bg-black">
       <motion.div className="progress-bar" style={{ scaleX: scaleX }} />
       {children}
-    </>
+    </div>
   );
 };
 

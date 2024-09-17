@@ -33,29 +33,15 @@ export function Hero() {
         <LetterPullup
           delay={0.3}
           words={`Hi...I'm ${name.toString()}`}
-          className="text-xl md:text-2xl font-extrabold text-white"
+          className="text-xl md:text-7xl  text-white font-bree-serif"
         />
-
-        <div className="flex flex-col gap-0 space-y-0 mb-4 items-center justify-center">
-          {DATA.roles.map((role, index) => (
-            <HyperText
-              key={index}
-              duration={30}
-              className="text-white font-mono text-md"
-              text={role}
-            />
-          ))}
-        </div>
         <BlurIn
-          className="text-white font-mono text-md mb-4 w-full"
+          className="text-white font-jakarta text-md my-4 w-full md:text-xl"
           word={DATA.description}
         />
 
         <Button asChild className="h-12 relative w-48 mx-5">
-          <Link
-            href="https://1drv.ms/b/s!Am7mTXvg_uCXhOFbGUd3L1NNwZ9uYA?embed=1&em=2"
-            target="_blank"
-          >
+          <Link href={DATA.resumeUrl} target="_blank">
             <BorderBeam /> My Resume
           </Link>
         </Button>

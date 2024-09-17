@@ -24,6 +24,11 @@ const config = {
     extend: {
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
+        jakarta: ["var(--font-jakarta)", ...fontFamily.sans],
+        pasifico: ["var(--font-pasifico)", ...fontFamily.sans],
+        "bree-serif": ["var(--font-bree-serif)", ...fontFamily.sans],
+        bebas: ["var(--font-bebas)", ...fontFamily.sans],
+        // rowdies: ["var(--font-rowdies)", ...fontFamily.sans],
       },
       colors: {
         border: "hsl(var(--border))",

@@ -4,6 +4,12 @@ import "@/styles/globals.css";
 
 import { cn } from "@/lib/utils";
 import AnimatedCursor from "react-animated-cursor";
+import {
+  fontBebas,
+  fontBreeSerif,
+  fontPacifico,
+  fontRowdies,
+} from "@/styles/font";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -25,7 +31,11 @@ export default function RootLayout({
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable
+          fontSans.variable,
+          fontPacifico.variable,
+          fontBreeSerif.variable,
+          fontBebas.variable
+          // fontRowdies.variable
         )}
       >
         {children}

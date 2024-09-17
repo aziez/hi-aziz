@@ -1,9 +1,10 @@
 import Scene from "../hero/Scene";
 import { useFrame, useThree } from "@react-three/fiber";
-import { useEffect, useRef, useState } from "react";
-import { Circle, SpotLight } from "@react-three/drei";
+import { Suspense, useEffect, useRef, useState } from "react";
+import { Center, Circle, SpotLight } from "@react-three/drei";
 import Model from "../hero/model";
 import * as THREE from "three";
+import ModelAvatar from "@/webGL/Avatar";
 
 const HologramCharacter = () => {
   const groupRef = useRef<THREE.Group>(null);
@@ -47,13 +48,9 @@ const HologramCharacter = () => {
       </mesh>
       <group position={[0, -2, 0]} castShadow>
         <Model scrollY={0} />
+        {/* <ModelAvatar scrollY={0} /> */}
       </group>
 
-      {/* Round plane to receive shadows */}
-
-      {/* Top-right light for shadow casting */}
-
-      {/* Ambient light for overall scene brightness */}
       <ambientLight intensity={0.5} />
       <SpotLight
         castShadow

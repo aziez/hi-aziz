@@ -8,8 +8,9 @@ export default function Home() {
     <SmoothScrollLayout>
       <Hero />
 
-      <main className="flex min-h-screen flex-col items-center justify-between">
+      <main className="flex min-h-screen flex-col items-center justify-between p-8 text-center">
         <PageWrapper>
+          <h1 className="text-4xl lg:text-5xl font-bebas">ABOUT</h1>
           <About />
         </PageWrapper>
       </main>

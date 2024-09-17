@@ -5,14 +5,37 @@ export const DATA = {
   name: "M. Abdul Aziz",
   initials: "MAA",
   url: "#",
+  resumeUrl: "https://1drv.ms/b/s!Am7mTXvg_uCXhOFbGUd3L1NNwZ9uYA?embed=1&em=2",
   roles: ["Front End Developer", "Fullstack Javascript"],
   location: "Jakarta, Indonesia",
   locationLink: "https://www.google.com/maps/place/jakarta",
   description:
-    "Dedicated to pushing the boundaries of design and functionality to craft user-centric web experiences that captivate and leave a lasting impression.",
+    "Skilled Full-Stack Developer with extensive experience in Front-End development using Next.js, React and Ionic Framework. ",
   summary:
-    "As a highly skilled Full-Stack Developer, I possess deep expertise in modern Front-End technologies, particularly Next.js and TypeScript. I have a strong track record in building responsive web applications, optimizing performance, and enhancing SEO. Additionally, I am adept at integrating third-party services and deploying applications on Ubuntu servers. My code is consistently clean, maintainable, and aligned with high accessibility standards,Beyond development, I have significant experience in IT Support, specializing in advanced technical troubleshooting, hardware and software management, and network security enhancements. I'm also well-versed in system maintenance, data backup, and recovery, making me a reliable resource for comprehensive IT solutions.",
+    "I'm Aziz, a Full-Stack Developer with a degree in Computer Science from Universitas Pamulang. With a robust background in modern web technologies, including Next.js, TypeScript, HTML, CSS, JavaScript, ReactJS, Ionic and Angular, I excel at crafting dynamic, user-friendly web applications. My expertise in building responsive interfaces and optimizing performance is complemented by my ability to enhance SEO and integrate third-party services seamlessly In addition to my frontend capabilities, I have significant experience in Virtual Reality development. Utilizing tools like Three.js and A-Frame, I create immersive and interactive VR experiences, including realistic virtual tours that captivate and engage users My skills extend to mobile application development with the Ionic framework and a solid foundation in IT Support, where I specialize in technical troubleshooting, hardware and software management, and network security. This diverse skill set not only allows me to tackle complex problems but also keeps me at the forefront of emerging trends in both frontend and VR development.If you’re seeking a Full-Stack Developer with a comprehensive expertise in web and VR technologies, along with a strong IT Support background, I’m eager to bring my skills to your projects. Thank you for considering my profile.",
   avatarUrl: "/me.png",
+  professionalSummary: `
+    As a Full-Stack Developer with a Computer Science degree from Universitas Pamulang, I bring a comprehensive skill set in modern web technologies and Virtual Reality development. My expertise includes:
+
+    Web Development:
+    • Proficient in Next.js, TypeScript, HTML, CSS, JavaScript, ReactJS, Ionic, and Angular
+    • Specializes in creating responsive, dynamic, and user-friendly web applications
+    • Experienced in performance optimization, SEO enhancement, and third-party service integration
+
+    Virtual Reality Development:
+    • Skilled in Three.js and A-Frame for immersive VR experiences
+    • Creator of engaging virtual tours and interactive 3D environments
+
+    Mobile Development:
+    • Experienced in building cross-platform mobile applications using Ionic framework
+
+    IT Support:
+    • Strong background in technical troubleshooting, hardware/software management, and network security
+
+    My diverse skill set enables me to tackle complex problems efficiently and stay current with emerging trends in frontend and VR development. I am committed to delivering high-quality solutions that meet and exceed client expectations.
+
+    If you're seeking a versatile Full-Stack Developer with expertise in web technologies, VR development, and a solid IT support background, I am eager to contribute my skills to your projects. Thank you for considering my profile.
+`,
   skills: [
     "Ionic",
     "React",
