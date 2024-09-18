@@ -68,7 +68,9 @@ const ScrollButton: React.FC<ScrollButtonProps> = ({
           <ChevronDown className="w-6 h-6" />
         </motion.div>
       </div>
-      <p className="text-sm font-thin font-mono uppercase">{text}</p>
+      <h3 className="text-2xl font-semibold mb-4 text-gray-200 uppercase">
+        {text}
+      </h3>
     </Link>
   );
 };

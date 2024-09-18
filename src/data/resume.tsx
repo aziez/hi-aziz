@@ -11,8 +11,19 @@ export const DATA = {
   locationLink: "https://www.google.com/maps/place/jakarta",
   description:
     "Skilled Full-Stack Developer with extensive experience in Front-End development using Next.js, React and Ionic Framework. ",
-  summary:
-    "I'm Aziz, a Full-Stack Developer with a degree in Computer Science from Universitas Pamulang. With a robust background in modern web technologies, including Next.js, TypeScript, HTML, CSS, JavaScript, ReactJS, Ionic and Angular, I excel at crafting dynamic, user-friendly web applications. My expertise in building responsive interfaces and optimizing performance is complemented by my ability to enhance SEO and integrate third-party services seamlessly In addition to my frontend capabilities, I have significant experience in Virtual Reality development. Utilizing tools like Three.js and A-Frame, I create immersive and interactive VR experiences, including realistic virtual tours that captivate and engage users My skills extend to mobile application development with the Ionic framework and a solid foundation in IT Support, where I specialize in technical troubleshooting, hardware and software management, and network security. This diverse skill set not only allows me to tackle complex problems but also keeps me at the forefront of emerging trends in both frontend and VR development.If you’re seeking a Full-Stack Developer with a comprehensive expertise in web and VR technologies, along with a strong IT Support background, I’m eager to bring my skills to your projects. Thank you for considering my profile.",
+  summary: `
+    I'm Aziz, a Full-Stack Developer with a Computer Science degree from Universitas Pamulang. My expertise includes:
+
+    • Front-End Development: Proficient in Next.js, React, TypeScript, and Angular
+    • Back-End Development: Experienced with Node.js and database management
+    • Mobile Development: Skilled in creating cross-platform apps using Ionic framework
+    • Virtual Reality: Capable of building immersive experiences with Three.js and A-Frame
+    • IT Support: Strong background in troubleshooting and network security
+
+    I specialize in creating responsive, user-friendly web applications with a focus on performance and SEO. My diverse skill set allows me to adapt quickly to new technologies and solve complex problems efficiently.
+
+    I'm passionate about delivering high-quality solutions and always eager to take on new challenges in web development, VR, and mobile applications.
+  `,
   avatarUrl: "/me.png",
   professionalSummary: `
     As a Full-Stack Developer with a Computer Science degree from Universitas Pamulang, I bring a comprehensive skill set in modern web technologies and Virtual Reality development. My expertise includes:

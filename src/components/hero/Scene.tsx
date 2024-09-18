@@ -1,14 +1,22 @@
 "use client";
 import React, { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import { Center, Environment, OrbitControls } from "@react-three/drei";
+import {
+  Center,
+  Environment,
+  Html,
+  OrbitControls,
+  SpotLight,
+  useProgress,
+} from "@react-three/drei";
 import ModelAvatar from "@/webGL/Avatar";
+// import HiAziz from "@/webGL/Hi-Aziz";
 import Model from "./model";
 import Cursor3D from "../cursor3D";
 import { Perf } from "r3f-perf";
 import dynamic from "next/dynamic";
 
-const SkyBox = dynamic(() => import("../sky-box"), {
+const HiAziz = dynamic(() => import("@/webGL/Hi-Aziz"), {
   ssr: false,
 });
 
@@ -25,25 +33,33 @@ export default function Scene() {
     <Canvas linear dpr={3} camera={{ near: 0.1, far: 300, fov: 60 }}>
       {/* <Perf position="top-left" /> */}
 
-      <rectAreaLight
-        position={[0, -6, 0]}
-        color={"#ffffff"}
-        width={10}
-        height={0.02}
-        frustumCulled={true}
-        intensity={3}
+      <Environment preset="sunset" />
+      <ambientLight intensity={2} />
+      {/* Main directional light (simulating sun) */}
+      <directionalLight
+        position={[5, 5, 5]}
+        intensity={1}
+        castShadow
+        shadow-mapSize={[1024, 1024]}
       />
-      <SkyBox />
-      <Environment near={1} far={1000} resolution={100} preset="dawn" />
-      <ambientLight intensity={1} color={"#ffff"} castShadow />
-      <Center position={[0, 1, 0]}>
-        <Suspense fallback={null}>
-          <ModelAvatar scrollY={scrollY} />
-        </Suspense>
+
+      {/* Fill light */}
+      <pointLight position={[-5, 0, -5]} intensity={2} />
+      {/* Spotlight for dramatic effect */}
+      <SpotLight
+        position={[0, 5, 0]}
+        angle={0.3}
+        penumbra={1}
+        intensity={2}
+        distance={6}
+        castShadow
+      />
+      <Center position={[0, -1, 0]}>
+        <HiAziz scrollY={scrollY} />
       </Center>
 
       <OrbitControls
-        target={[0, 1, 0]}
+        target={[0, -1, 0]}
         autoRotate
         minDistance={2}
         maxDistance={2}

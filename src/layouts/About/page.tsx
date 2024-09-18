@@ -1,28 +1,31 @@
 "use client";
 import HologramCharacter from "@/components/about/holo";
 import InfoCard from "@/components/about/info-card";
-import Scene from "@/components/hero/Scene";
-import BlurIn from "@/components/ui/blur-in";
-import { Button } from "@/components/ui/button";
-import { Cover } from "@/components/ui/cover";
-import HyperText from "@/components/ui/hyper-text";
-import LetterPullup from "@/components/ui/latter-pull-up";
-import { BorderBeam } from "@/components/ui/moving-border";
-import { SparklesCore } from "@/components/ui/sparkles";
-import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
-import { TextHoverEffect } from "@/components/ui/text-hover";
 import { Canvas } from "@react-three/fiber";
-import dynamic from "next/dynamic";
-import Link from "next/link";
 import React from "react";
+import { motion } from "framer-motion";
 
 export function About() {
   return (
-    <section id="about" className="grid grid-cols-1 md:grid-cols-2">
-      <InfoCard />
-      <Canvas className="hidden md:block">
-        <HologramCharacter />
-      </Canvas>
+    <section
+      id="about"
+      // className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 to-gray-800 py-16"
+    >
+      <div className="container mx-auto px-4">
+        <InfoCard />
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="h-[300px] md:h-[400px] bg-gray-800 rounded-lg shadow-xl overflow-hidden"
+          >
+            <Canvas>
+              <HologramCharacter />
+            </Canvas>
+          </motion.div>
+        </div> */}
+      </div>
     </section>
   );
 }
