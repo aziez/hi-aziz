@@ -11,7 +11,7 @@ export function About() {
       id="about"
       // className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 to-gray-800 py-16"
     >
-      <div className="container mx-auto px-4">
+      <div className="container">
         <InfoCard />
         {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
           <motion.div

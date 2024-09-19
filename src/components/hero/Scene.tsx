@@ -30,7 +30,11 @@ export default function Scene() {
   }, []);
 
   return (
-    <Canvas linear dpr={3} camera={{ near: 0.1, far: 300, fov: 60 }}>
+    // <Canvas linear dpr={3} camera={{ near: 0.1, far: 300, fov: 60 }}>
+    <Canvas
+      camera={{ position: [0, 1.5, 3], fov: 50 }}
+      style={{ width: "100vw", height: "100vh" }}
+    >
       {/* <Perf position="top-left" /> */}
 
       <Environment preset="sunset" />
@@ -54,12 +58,12 @@ export default function Scene() {
         distance={6}
         castShadow
       />
-      <Center position={[0, -1, 0]}>
-        <HiAziz scrollY={scrollY} />
+      <Center position={[0, -2, 0]} scale={0.8}>
+        <HiAziz play={true} />
       </Center>
 
       <OrbitControls
-        target={[0, -1, 0]}
+        target={[0, -2, 0]}
         autoRotate
         minDistance={2}
         maxDistance={2}

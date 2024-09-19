@@ -97,6 +97,14 @@ const config = {
           "30%": { opacity: "1" },
           "60%, 100%": { transform: "scale(1)", opacity: "0" },
         },
+        marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(calc(-100% - var(--gap)))" },
+        },
+        "marquee-vertical": {
+          from: { transform: "translateY(0)" },
+          to: { transform: "translateY(calc(-100% - var(--gap)))" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -106,6 +114,8 @@ const config = {
         arrowAnimation: "arrowAnimation 1.5s forwards 1s",
         "pulse-ring":
           "pulseRing 3s cubic-bezier(0.215, 0.61, 0.355, 1) infinite",
+        marquee: "marquee var(--duration) linear infinite",
+        "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
       },
     },
   },
