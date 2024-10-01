@@ -6,47 +6,44 @@ export const DATA = {
   initials: "MAA",
   url: "#",
   resumeUrl: "https://1drv.ms/b/s!Am7mTXvg_uCXhOFbGUd3L1NNwZ9uYA?embed=1&em=2",
-  roles: ["Front End Developer", "Fullstack Javascript"],
+  roles: ["Front-End Developer", "Full-Stack JavaScript Developer"],
   location: "Jakarta, Indonesia",
   locationLink: "https://www.google.com/maps/place/jakarta",
   description:
-    "Skilled Full-Stack Developer with extensive experience in Front-End development using Next.js, React and Ionic Framework. ",
+    "Experienced Full-Stack Developer specializing in Front-End development with Next.js, React, and the Ionic Framework.",
   summary: `
-    I'm Aziz, a Full-Stack Developer with a Computer Science degree from Universitas Pamulang. My expertise includes:
+  I'm Aziz, a Full-Stack Developer with a degree in Computer Science from Universitas Pamulang. My key areas of expertise include:
 
-    • Front-End Development: Proficient in Next.js, React, TypeScript, and Angular
-    • Back-End Development: Experienced with Node.js and database management
-    • Mobile Development: Skilled in creating cross-platform apps using Ionic framework
-    • Virtual Reality: Capable of building immersive experiences with Three.js and A-Frame
-    • IT Support: Strong background in troubleshooting and network security
-
-    I specialize in creating responsive, user-friendly web applications with a focus on performance and SEO. My diverse skill set allows me to adapt quickly to new technologies and solve complex problems efficiently.
-
-    I'm passionate about delivering high-quality solutions and always eager to take on new challenges in web development, VR, and mobile applications.
-  `,
+  • Front-End Development: Proficient in Next.js, React, TypeScript, and Angular.
+  • Back-End Development: Solid experience with Node.js and database management.
+  • Mobile Development: Skilled in cross-platform app creation using the Ionic framework.
+  • Virtual Reality: Adept at developing immersive experiences with Three.js and A-Frame.
+  • IT Support: Strong background in troubleshooting and network security.
+`,
   avatarUrl: "/me.png",
   professionalSummary: `
-    As a Full-Stack Developer with a Computer Science degree from Universitas Pamulang, I bring a comprehensive skill set in modern web technologies and Virtual Reality development. My expertise includes:
+  As a Full-Stack Developer with a degree in Computer Science from Universitas Pamulang, I offer a wide range of expertise in modern web technologies and Virtual Reality development. My capabilities include:
 
-    Web Development:
-    • Proficient in Next.js, TypeScript, HTML, CSS, JavaScript, ReactJS, Ionic, and Angular
-    • Specializes in creating responsive, dynamic, and user-friendly web applications
-    • Experienced in performance optimization, SEO enhancement, and third-party service integration
+  Web Development:
+  • Expertise in Next.js, TypeScript, HTML, CSS, JavaScript, ReactJS, Ionic, and Angular.
+  • Specialize in creating responsive, dynamic, and user-friendly web applications.
+  • Experienced in performance optimization, SEO, and third-party service integrations.
 
-    Virtual Reality Development:
-    • Skilled in Three.js and A-Frame for immersive VR experiences
-    • Creator of engaging virtual tours and interactive 3D environments
+  Virtual Reality Development:
+  • Skilled in Three.js and A-Frame for building immersive VR experiences.
+  • Developed engaging virtual tours and interactive 3D environments.
 
-    Mobile Development:
-    • Experienced in building cross-platform mobile applications using Ionic framework
+  Mobile Development:
+  • Proficient in building cross-platform mobile apps using the Ionic framework.
 
-    IT Support:
-    • Strong background in technical troubleshooting, hardware/software management, and network security
+  IT Support:
+  • Extensive experience in technical troubleshooting, hardware/software management, and network security.
 
-    My diverse skill set enables me to tackle complex problems efficiently and stay current with emerging trends in frontend and VR development. I am committed to delivering high-quality solutions that meet and exceed client expectations.
+  My diverse skill set allows me to approach complex challenges with efficiency and stay ahead of industry trends. I am committed to delivering top-tier solutions that exceed expectations.
 
-    If you're seeking a versatile Full-Stack Developer with expertise in web technologies, VR development, and a solid IT support background, I am eager to contribute my skills to your projects. Thank you for considering my profile.
+  If you're looking for a versatile Full-Stack Developer with expertise in web technologies, VR development, and IT support, I am ready to contribute my skills to your projects. Thank you for reviewing my profile.
 `,
+
   skills: [
     "Ionic",
     "React",
@@ -67,14 +64,12 @@ export const DATA = {
   ],
   contact: {
     email: "Aziz13.id@gmail.com",
-    tel: "+6281514415436",
+    tell: "+6281514415436",
     social: {
       GitHub: {
         name: "GitHub",
         url: "https://github.com/aziez",
         icon: Icons.github,
-
-        navbar: true,
       },
       LinkedIn: {
         name: "LinkedIn",
@@ -82,13 +77,6 @@ export const DATA = {
         icon: Icons.linkedin,
 
         navbar: true,
-      },
-      email: {
-        name: "Send Email",
-        url: "#",
-        icon: Icons.email,
-
-        navbar: false,
       },
     },
   },
@@ -99,9 +87,8 @@ export const DATA = {
       badges: [],
       location: "Onsite Jakarta",
       title: "Front End Developer",
-      logoUrl: "/atomic.png",
       start: "February 2023",
-      end: "Now",
+      end: "present",
       description:
         "I develop and maintain web applications using Next.js, React, HTML5, CSS3, and JavaScript. My work includes creating reusable UI components to ensure consistent design across the application, collaborating with design and backend teams to transform UI/UX designs into functional code, and implementing best practices for writing high-quality code, such as linting, testing, and version control. Additionally, I integrate third-party services like e-Sign and payment gateways to enhance application functionality, and I deploy Next.js applications to Ubuntu servers for production use.",
     },
@@ -111,7 +98,6 @@ export const DATA = {
       href: "https://Lokcay.com",
       location: "Onsite Jakarta",
       title: "IT Support",
-      logoUrl: "/shopify.svg",
       start: "June 2017",
       end: "January 2023",
       description:
@@ -139,11 +125,11 @@ export const DATA = {
   projects: [
     {
       title: "Sportify",
-      href: "https://sportify.od.id",
-      dates: "July 2024 - now",
+      href: "https://sportify.or.id",
+      dates: "July 2024 - Present",
       active: true,
       description:
-        "Sportify aims to address the physical and mental health issues Millennials and Gen Z face due to their sedentary lifestyles. The platform provides services for finding workout buddies and renting sports facilities and equipment. This document outlines the requirements for developing the Sportify platform to guide the engineering team.",
+        "Sportify tackles physical and mental health issues among Millennials and Gen Z, offering a platform to find workout partners and rent sports facilities and equipment. This document outlines the platform’s requirements to guide the engineering team.",
       technologies: [
         "Next.js",
         "Typescript",
@@ -157,27 +143,80 @@ export const DATA = {
       links: [
         {
           type: "Website",
-          href: "https://sportify.com",
+          href: "https://sportify.or.id",
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "",
+      image: "/images/portfolio/sportify.png",
       video: "",
     },
     {
-      title: "Product list with cart",
+      title: "Best Event Solution",
+      href: "https://besteventsolution.id/",
+      dates: "August 2023 - December 2023",
+      active: false,
+      description:
+        "Best Event Solutions is an event management skill that helps support and facilitate the work of event organizers to achieve event objectives.Every activity that is held aims to gain benefits for both parties, both the organizers and those present at the time the activity takes place.",
+      technologies: ["Wordpress"],
+      links: [
+        {
+          type: "Website",
+          href: "https://besteventsolution.id/",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/images/portfolio/best.png",
+      video: "",
+    },
+    {
+      title: "Indonesia Dental Exhibition",
+      href: "https://indonesiadentalexpo.com/",
+      dates: "January 2024 - Maret 2024",
+      active: false,
+      description:
+        "The Indonesia Dental Exhibition & Conference (IDEC) is a major event in the dental industry, held every two years in Jakarta. It brings together dental professionals, suppliers, and industry leaders to showcase the latest dental products, technologies, and services. The event features an exhibition, a scientific conference with international speakers, and numerous networking opportunities. IDEC aims to advance the dental field in Indonesia by providing a platform for education, innovation, and professional growth.",
+      technologies: ["Wordpress"],
+      links: [
+        {
+          type: "Website",
+          href: "https://indonesiadentalexpo.com/",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/images/portfolio/idec.png",
+      video: "",
+    },
+    {
+      title: "BI Fest Virtual Exhibitons",
+      href: "https://dyc21.s3.ap-southeast-1.amazonaws.com/fesbukers_06/index.html",
+      dates: "April 2023 - Mei 2023",
+      active: false,
+      description:
+        "The Work Culture Festival of Bank Indonesia is a place where you can explore and interact with the diversity of cultures and shared values; education; and knowledge about the young culture that exists at Bank Indonesia. Congratulations on exploring and benefiting from it.",
+      technologies: ["Virtual tour", "Pano2VR"],
+      links: [
+        {
+          type: "Website",
+          href: "https://dyc21.s3.ap-southeast-1.amazonaws.com/fesbukers_06/index.html",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/images/portfolio/bifest.png",
+      video: "",
+    },
+    {
+      title: "Product List with Cart",
       href: "https://list-product-fe.vercel.app",
       dates: "June 2024",
       active: false,
       description:
-        "Practice updating the UI in multiple places based on user actions. This is a solution to the Product list with cart challenge on Frontend Mentor. Frontend Mentor challenges help you improve your coding skills by building realistic projects.",
+        "This project enhances UI updates based on user actions. It was developed as part of a Frontend Mentor challenge to improve coding skills by building real-world applications.",
       technologies: [
         "Next.js",
         "Typescript",
-        "json",
-        "suztand",
+        "JSON",
+        "Zustand",
         "TailwindCSS",
-        ,
         "Shadcn UI",
         "Magic UI",
       ],
@@ -193,7 +232,7 @@ export const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "",
+      image: "/images/portfolio/menu.png",
       video: "",
     },
     {
@@ -202,7 +241,7 @@ export const DATA = {
       dates: "April 2024",
       active: true,
       description:
-        "The challenge is build out this IP Address Tracker app and get it looking as close to the design as possible. To get the IP Address locations, you'll be using the [IP Geolocation API by IPify](https://geo.ipify.org/). To generate the map, we recommend using [LeafletJS](https://leafletjs.com/).",
+        "Built an IP Address Tracker that uses the IPify API for location data and LeafletJS for map rendering. The goal was to closely match the design challenge on Frontend Mentor.",
       technologies: ["React.js", "Javascript", "Leaflet", "TailwindCSS"],
       links: [
         {
@@ -216,16 +255,16 @@ export const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "",
+      image: "/images/portfolio/ip-chechker.png",
       video: "",
     },
     {
-      title: "Advice Genarators",
+      title: "Advice Generator",
       href: "https://advicegenerator13.netlify.app/",
-      dates: "Maret 2024",
+      dates: "March 2024",
       active: true,
       description:
-        "Developed an Advice generator, The  challenge is build out this advice generator app using the [Advice Slip API](https://api.adviceslip.com) and get it looking as close to the design as possible.",
+        "Developed an advice generator using the Advice Slip API, designed to look as close as possible to the provided design.",
       technologies: ["HTML", "Javascript", "TailwindCSS"],
       links: [
         {
@@ -239,16 +278,16 @@ export const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "",
+      image: "/images/portfolio/advice.png",
       video: "",
     },
     {
-      title: "URL shortening API landing page",
+      title: "URL Shortening API Landing Page",
       href: "https://main--regal-gecko-04a7cc.netlify.app/",
-      dates: "Maret 2024",
+      dates: "March 2024",
       active: false,
       description:
-        "Developed an URL Shortening generator, The challenge is integrate with the Clean URI API to create shortened URLs and display them like in the designs.",
+        "Created a URL shortener integrated with the Clean URI API to generate shortened links and display them according to the design challenge.",
       technologies: ["Next.js", "Typescript", "TailwindCSS"],
       links: [
         {
@@ -262,7 +301,7 @@ export const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "",
+      image: "/images/portfolio/url-shorter.png",
       video: "",
     },
   ],
