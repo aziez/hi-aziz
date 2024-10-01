@@ -1,73 +1,85 @@
 "use client";
 import Scene from "@/components/hero/Scene";
+import BlurIn from "@/components/ui/blur-in";
 import { Button } from "@/components/ui/button";
 import { Cover } from "@/components/ui/cover";
+import HyperText from "@/components/ui/hyper-text";
+import LetterPullup from "@/components/ui/latter-pull-up";
 import { BorderBeam } from "@/components/ui/moving-border";
 import { SparklesCore } from "@/components/ui/sparkles";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { TextHoverEffect } from "@/components/ui/text-hover";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import React from "react";
+import React, { Suspense } from "react";
+import { DATA } from "@/data/resume";
+import ScrollAnimated from "@/components/scroll-animated";
+import { useProgress } from "@react-three/drei";
+import { motion } from "framer-motion";
+
+function Loader() {
+  const { progress } = useProgress();
+
+  return (
+    <div className="flex flex-col items-center justify-evenly h-screen space-y-4">
+      <div className="motion">
+        <motion.div
+          className="w-16 h-16 border-t-8 border-red-500 rounded-full animate-spin"
+          initial={{ rotate: 0 }}
+          animate={{ rotate: 360 }}
+          transition={{
+            repeat: Infinity,
+            ease: "linear",
+            duration: 1,
+          }}
+        />
+        <motion.div
+          className="text-2xl font-bold text-red-500"
+          animate={{ opacity: [0, 1], y: [10, 0] }}
+          transition={{ duration: 0.5 }}
+        >
+          {progress.toFixed(0)}%
+        </motion.div>
+      </div>
+      <div></div>
+    </div>
+  );
+}
 
 const Scene3D = dynamic(() => import("@/components/hero/Scene"), {
   ssr: false,
+  loading: () => <Loader />,
 });
 
 export function Hero() {
+  const name = DATA.name;
   return (
-    <div className="h-screen p-4 relative w-full bg-black flex flex-col items-center justify-center gap-4 text-center">
-      <div className="w-full absolute inset-0 h-screen">
-        <SparklesCore
-          id="tsparticlesfullpage"
-          background="transparent"
-          minSize={0.6}
-          maxSize={1.4}
-          particleDensity={100}
-          className="w-full h-full"
-          particleColor="#FFFFFF"
-        />
-      </div>
-
-      <div className="absolute h-full w-full">
+    <div className="h-screen p-4 relative w-full flex flex-col items-center justify-center gap-4 text-center">
+      <div className="absolute h-full w-full z-0 overflow-hidden">
         <Scene3D />
       </div>
       <div className="container">
-        <div className="h-[10rem] flex items-center justify-center">
+        <div className="h-[10rem] flex flex-col items-center justify-center z-10">
           <TextHoverEffect text="HELLO" automatic duration={100} />
         </div>
-        {/* <h1 className="md:text-9xl font-extrabold text-3xl lg:text-7xl text-center text-white">
-          HELLO
-        </h1> */}
-        <Cover>
-          <h2 className="text-xl md:text-2xl font-extrabold">
-            Hi...👋🏻👋🏻 Im Aziez..👨🏻
-          </h2>
-        </Cover>
-        <TextGenerateEffect
-          filter={true}
-          className="text-white font-mono text-pretty my-5"
-          words={"Front end Web Developer | Full Stack Javascript"}
+        <LetterPullup
+          delay={0.3}
+          words={`Hi...I'm ${name.toString()}`}
+          className="text-xl md:text-7xl  text-white font-bree-serif"
         />
-        <p className="text-white font-mono text-md mb-4">
-          Dedicated to pushing the boundaries of design and functionality to
-          craft user-centric web experiences that captivate and leave a lasting
-          impression.
-        </p>
+        <BlurIn
+          className="text-white font-jakarta text-md my-4 w-full md:text-xl"
+          word={DATA.description}
+        />
 
         <Button asChild className="h-12 relative w-48 mx-5">
-          <Link
-            href="https://1drv.ms/b/s!Am7mTXvg_uCXhOFbGUd3L1NNwZ9uYA?embed=1&em=2"
-            target="_blank"
-          >
+          <Link href={DATA.resumeUrl} target="_blank">
             <BorderBeam /> My Resume
           </Link>
         </Button>
-        <Button variant={"outline"} asChild className="h-12 relative w-48 mx-5">
-          <Link href="/explore">
-            <BorderBeam /> Explore Our Portfolio
-          </Link>
-        </Button>
+      </div>
+      <div className="absolute bottom-0">
+        <ScrollAnimated targetId="about" text="about" />
       </div>
     </div>
   );

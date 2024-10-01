@@ -1,9 +1,11 @@
 import Scene from "../hero/Scene";
 import { useFrame, useThree } from "@react-three/fiber";
-import { useEffect, useRef, useState } from "react";
-import { Circle, SpotLight } from "@react-three/drei";
+import { Suspense, useEffect, useRef, useState } from "react";
+import { Center, Circle, SpotLight } from "@react-three/drei";
 import Model from "../hero/model";
 import * as THREE from "three";
+import ModelAvatar from "@/webGL/Avatar";
+import HiAziz from "@/webGL/Hi-Aziz";
 
 const HologramCharacter = () => {
   const groupRef = useRef<THREE.Group>(null);
@@ -17,16 +19,6 @@ const HologramCharacter = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  useFrame((state, delta) => {
-    if (groupRef.current) {
-      groupRef.current.rotation.y += delta * 0.5;
-    }
-    if (hologramRef.current) {
-      hologramRef.current.rotation.y += delta * 0.8;
-    }
-  });
-
   useFrame(() => {
     if (!groupRef.current) return;
     const baseY = viewport.width < 768 ? 10 : 20;
@@ -41,19 +33,16 @@ const HologramCharacter = () => {
       castShadow={false}
       visible={true}
     >
-      <mesh ref={hologramRef} position={[0, 0, 0]} scale={[1.5, 2, 1.5]}>
+      {/* <mesh ref={hologramRef} position={[0, 0, 0]} scale={[1.5, 2, 1.5]}>
         <cylinderGeometry args={[0.5, 0.5, 2, 32, 10, true]} />
         <meshBasicMaterial color="#7000B6" transparent wireframe />
-      </mesh>
+      </mesh> */}
       <group position={[0, -2, 0]} castShadow>
-        <Model scrollY={0} />
+        {/* <Model scrollY={0} /> */}
+        <HiAziz scrollY={0} play={false} />
+        {/* <ModelAvatar scrollY={0} /> */}
       </group>
 
-      {/* Round plane to receive shadows */}
-
-      {/* Top-right light for shadow casting */}
-
-      {/* Ambient light for overall scene brightness */}
       <ambientLight intensity={0.5} />
       <SpotLight
         castShadow
@@ -65,7 +54,7 @@ const HologramCharacter = () => {
         shadow-bias={-0.0001}
         rotation={[0.05357053961540121, 0.7489488531899338, 2.3645154891044324]}
       >
-        <Circle
+        {/* <Circle
           ref={planeRef}
           scale={0.8}
           args={[2.5, 32]} // Radius and segments
@@ -75,7 +64,7 @@ const HologramCharacter = () => {
           castShadow={true}
         >
           <meshStandardMaterial color="#1E3A8A" transparent opacity={0.5} />
-        </Circle>
+        </Circle> */}
       </SpotLight>
       <shadowMaterial
         color={"#1c1c1c"}

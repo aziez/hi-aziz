@@ -1,18 +1,26 @@
 import SmoothScrollLayout from "@/components/ui/smoth-scroll";
 import { Hero } from "@/layouts/Hero/page";
 import PageWrapper from "./page-wrapper";
-import AboutPage from "@/layouts/About/page";
+import { About } from "@/layouts/About/page";
+import Project from "@/layouts/Projects/Page";
+import Experience from "@/components/work/work";
+import Footer from "./footer";
+import ContactSection from "@/components/contact/contact";
 
 export default function Home() {
   return (
     <SmoothScrollLayout>
       <Hero />
 
-      {/* <main className="flex min-h-screen flex-col items-center justify-between">
+      <main className="flex min-h-screen flex-col items-center justify-between  text-center">
         <PageWrapper>
-          <AboutPage />
+          <About />
+          <Project />
+          <Experience />
+          <ContactSection />
         </PageWrapper>
-      </main> */}
+      </main>
+      <Footer />
     </SmoothScrollLayout>
   );
 }

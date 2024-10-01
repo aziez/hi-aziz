@@ -1,71 +1,108 @@
-"use client";
+import React from "react";
 import { motion } from "framer-motion";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
+import Image from "next/image";
+import { DATA } from "@/data/resume";
+import { TechStack } from "./tech-stack";
 
-const InfoCard = () => {
-  const skills = [
-    { name: "Next.js", value: 90 },
-    { name: "JavaScript", value: 95 },
-    { name: "HTML + CSS", value: 95 },
-    { name: "Ionic/Angular", value: 70 },
-    { name: "WebGL", value: 80 },
-  ];
+const InfoCard: React.FC = () => {
+  const summaryParts = DATA.summary.trim().split("\n\n");
+  const introduction = summaryParts[0];
+  const skills = summaryParts[1]
+    .split("\n")
+    .filter((item) => item.trim() !== "");
+  const conclusion = summaryParts.slice(2).join("\n\n");
+
   return (
-    <>
-      <h1 className="text-4xl lg:text-7xl font-mono font-extrabold text-center text-blue-700 mb-8">
-        ABOUT
-      </h1>
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
-        <Card className="bg-black  text-white border-blue-500">
-          <CardHeader>
-            <CardTitle className="flex flex-col sm:flex-row items-center">
-              <div className="w-16 h-16 bg-blue-700 rounded-full mb-4 sm:mb-0 sm:mr-4"></div>
-              <div className="text-center sm:text-left">
-                <h2 className="text-2xl">M. Abdul Aziz</h2>
-                <p className="text-sm">Age: 26 | From: Indonesia</p>
-              </div>
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <h3 className="text-xl mb-4">SKILLS</h3>
-            {skills.map((skill, index) => (
-              <div key={index} className="mb-2">
-                <div className="flex justify-between mb-1">
-                  <span>{skill.name}</span>
-                  <span>{skill.value}%</span>
-                </div>
-                <Progress
-                  value={skill.value}
-                  className="h-2 bg-blue-600 text-white from-gray-800 to-blue-700 cursor-progress"
-                />
-              </div>
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="bg-gradient-to-br from-gray-900 to-gray-800 text-gray-200 p-6 rounded-xl shadow-2xl max-w-4xl mx-auto"
+    >
+      <div className="flex flex-col lg:flex-row gap-8">
+        <div className="lg:w-2/3">
+          <motion.h3
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-3xl font-bold mb-6 text-blue-400"
+          >
+            About Me
+          </motion.h3>
+
+          <motion.p
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="mb-6 text-lg leading-relaxed"
+          >
+            {introduction}
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="mb-6"
+          >
+            <h4 className="text-xl font-semibold mb-4 text-blue-300">Skills</h4>
+            <ul className="space-y-4">
+              {skills.map((skill, index) => {
+                const [title, details] = skill.split(":");
+                return (
+                  <li key={index} className="border-b border-gray-700 pb-4">
+                    <h5 className="font-semibold text-lg mb-2">
+                      {title.trim()}
+                    </h5>
+                    {details && (
+                      <ul className="list-disc list-inside space-y-1 text-gray-300">
+                        {details
+                          .split("•")
+                          .filter((item) => item.trim())
+                          .map((item, itemIndex) => (
+                            <li key={itemIndex}>{item.trim()}</li>
+                          ))}
+                      </ul>
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="text-gray-300"
+          >
+            {conclusion.split("\n\n").map((paragraph, index) => (
+              <p key={index} className="mb-4 text-lg leading-relaxed">
+                {paragraph}
+              </p>
             ))}
-            <h3 className="text-xl mt-6 mb-4">ABOUT</h3>
-            <p className="text-sm mb-2">
-              As a skilled Full-Stack Developer, I bring extensive expertise in
-              Front-End technologies, including Next.js and TypeScript. My
-              journey involves creating responsive web applications, optimizing
-              site performance, and enhancing SEO. I’m no stranger to
-              integrating third-party services and deploying applications on
-              Ubuntu servers. My code? Always clean and maintainable, adhering
-              to high accessibility standards.
-            </p>
-            <p className="text-sm mb-2">
-              But wait, there’s more! Beyond development, I’ve dabbled in IT
-              Support. Think advanced technical troubleshooting, hardware and
-              software management, and network security enhancements. I’m the
-              go-to person for system maintenance and data backup and recovery.
-            </p>
-            <p className="text-sm">Let’s build something great together! .✈️</p>
-          </CardContent>
-        </Card>
-      </motion.div>
-    </>
+          </motion.div>
+        </div>
+
+        <div className="lg:w-1/3">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="sticky top-8"
+          >
+            <Image
+              alt="avatar"
+              width={500}
+              height={500}
+              src="/me/2.jpeg"
+              className="rounded-xl shadow-lg mb-6"
+            />
+            <TechStack />
+          </motion.div>
+        </div>
+      </div>
+    </motion.div>
   );
 };
 

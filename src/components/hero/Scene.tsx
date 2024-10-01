@@ -1,11 +1,24 @@
 "use client";
 import React, { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
-import { Center, OrbitControls } from "@react-three/drei";
+import {
+  Center,
+  Environment,
+  Html,
+  OrbitControls,
+  SpotLight,
+  useProgress,
+} from "@react-three/drei";
+import ModelAvatar from "@/webGL/Avatar";
+// import HiAziz from "@/webGL/Hi-Aziz";
 import Model from "./model";
-import { SparklesCore } from "../ui/sparkles";
 import Cursor3D from "../cursor3D";
 import { Perf } from "r3f-perf";
+import dynamic from "next/dynamic";
+
+const HiAziz = dynamic(() => import("@/webGL/Hi-Aziz"), {
+  ssr: false,
+});
 
 export default function Scene() {
   const [scrollY, setScrollY] = useState(0);
@@ -17,37 +30,49 @@ export default function Scene() {
   }, []);
 
   return (
-    <Canvas linear dpr={3}>
+    // <Canvas linear dpr={3} camera={{ near: 0.1, far: 300, fov: 60 }}>
+    <Canvas
+      camera={{ position: [0, 1.5, 3], fov: 50 }}
+      style={{ width: "100vw", height: "100vh" }}
+    >
       {/* <Perf position="top-left" /> */}
 
-      <rectAreaLight
-        position={[0, 0, 0]}
-        color={"#ffffff"}
-        width={2}
-        height={0.02}
-        frustumCulled={false}
+      <Environment preset="sunset" />
+      <ambientLight intensity={2} />
+      {/* Main directional light (simulating sun) */}
+      <directionalLight
+        position={[5, 5, 5]}
+        intensity={1}
+        castShadow
+        shadow-mapSize={[1024, 1024]}
       />
-      <ambientLight castShadow intensity={1} position={[-0.38, 0.18, -0.38]} />
-      <pointLight
-        position={[0, 0.08, 0.46]}
-        intensity={10}
-        color={"#ff3838"}
-        castShadow={true}
-        distance={10}
+
+      {/* Fill light */}
+      <pointLight position={[-5, 0, -5]} intensity={2} />
+      {/* Spotlight for dramatic effect */}
+      <SpotLight
+        position={[0, 5, 0]}
+        angle={0.3}
+        penumbra={1}
+        intensity={2}
+        distance={6}
+        castShadow
       />
-      <Center position={[0, 1, 0]}>
-        <Suspense fallback={null}>
-          <Model scrollY={scrollY} />
-        </Suspense>
+      <Center position={[0, -2, 0]} scale={0.8}>
+        <HiAziz play={true} />
       </Center>
 
       <OrbitControls
-        target={[0, 1, 0]}
+        target={[0, -2, 0]}
         autoRotate
-        minPolarAngle={0.2}
-        maxPolarAngle={1.22}
+        minDistance={2}
+        maxDistance={2}
+        minPolarAngle={Math.PI / 2}
+        maxPolarAngle={Math.PI / 2}
+        enableZoom={true}
+        enablePan={true}
+        zoomSpeed={0.3}
       />
-      <Cursor3D />
     </Canvas>
   );
 }

@@ -24,6 +24,11 @@ const config = {
     extend: {
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],
+        jakarta: ["var(--font-jakarta)", ...fontFamily.sans],
+        pasifico: ["var(--font-pasifico)", ...fontFamily.sans],
+        "bree-serif": ["var(--font-bree-serif)", ...fontFamily.sans],
+        bebas: ["var(--font-bebas)", ...fontFamily.sans],
+        // rowdies: ["var(--font-rowdies)", ...fontFamily.sans],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -79,11 +84,38 @@ const config = {
             "offset-distance": "100%",
           },
         },
+        lineAnimation: {
+          "0%": { left: "80px" },
+          "100%": { left: "0" },
+        },
+        arrowAnimation: {
+          "0%": { width: "0" },
+          "100%": { width: "100%" },
+        },
+        pulseRing: {
+          "0%": { transform: "scale(0.33)", opacity: "0" },
+          "30%": { opacity: "1" },
+          "60%, 100%": { transform: "scale(1)", opacity: "0" },
+        },
+        marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(calc(-100% - var(--gap)))" },
+        },
+        "marquee-vertical": {
+          from: { transform: "translateY(0)" },
+          to: { transform: "translateY(calc(-100% - var(--gap)))" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
+        lineAnimation: "lineAnimation 1.5s forwards",
+        arrowAnimation: "arrowAnimation 1.5s forwards 1s",
+        "pulse-ring":
+          "pulseRing 3s cubic-bezier(0.215, 0.61, 0.355, 1) infinite",
+        marquee: "marquee var(--duration) linear infinite",
+        "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
       },
     },
   },
