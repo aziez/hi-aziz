@@ -1,6 +1,6 @@
-"use client";
-import React, { Suspense, useEffect, useState } from "react";
-import { Canvas } from "@react-three/fiber";
+'use client';
+import React, { Suspense, useEffect, useState } from 'react';
+import { Canvas } from '@react-three/fiber';
 import {
   Center,
   Environment,
@@ -8,15 +8,15 @@ import {
   OrbitControls,
   SpotLight,
   useProgress,
-} from "@react-three/drei";
-import ModelAvatar from "@/webGL/Avatar";
+} from '@react-three/drei';
+import ModelAvatar from '@/webGL/Avatar';
 // import HiAziz from "@/webGL/Hi-Aziz";
-import Model from "./model";
-import Cursor3D from "../cursor3D";
-import { Perf } from "r3f-perf";
-import dynamic from "next/dynamic";
+import Model from './model';
+import Cursor3D from '../cursor3D';
+import { Perf } from 'r3f-perf';
+import dynamic from 'next/dynamic';
 
-const HiAziz = dynamic(() => import("@/webGL/Hi-Aziz"), {
+const HiAziz = dynamic(() => import('@/webGL/Hi-Aziz'), {
   ssr: false,
 });
 
@@ -25,19 +25,19 @@ export default function Scene() {
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     // <Canvas linear dpr={3} camera={{ near: 0.1, far: 300, fov: 60 }}>
     <Canvas
       camera={{ position: [0, 1.5, 3], fov: 50 }}
-      style={{ width: "100vw", height: "100vh" }}
+      style={{ width: '100vw', height: '100vh' }}
     >
       {/* <Perf position="top-left" /> */}
 
-      <Environment preset="sunset" />
+      {/* <Environment preset="sunset" /> */}
       <ambientLight intensity={2} />
       {/* Main directional light (simulating sun) */}
       <directionalLight
