@@ -1,26 +1,26 @@
-import SmoothScrollLayout from "@/components/ui/smoth-scroll";
+import Navbar from "@/components/navigation/Navbar";
 import { Hero } from "@/layouts/Hero/page";
-import PageWrapper from "./page-wrapper";
 import { About } from "@/layouts/About/page";
 import Project from "@/layouts/Projects/Page";
-import Experience from "@/components/work/work";
+import Experience from "@/layouts/Experience/page";
+import ContactSection from "@/layouts/Contact/page";
 import Footer from "./footer";
-import ContactSection from "@/components/contact/contact";
+import FloatingCTA from "@/components/ui/floating-cta";
 
 export default function Home() {
   return (
-    <SmoothScrollLayout>
+    <>
+      <Navbar />
       <Hero />
-
-      <main className="flex min-h-screen flex-col items-center justify-between  text-center">
-        <PageWrapper>
-          <About />
-          <Project />
-          <Experience />
-          <ContactSection />
-        </PageWrapper>
+      <main className="relative w-full block">
+        <About />
+        <Project />
+        <Experience />
+        <ContactSection />
       </main>
       <Footer />
-    </SmoothScrollLayout>
+      <FloatingCTA />
+    </>
   );
 }
+

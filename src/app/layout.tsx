@@ -3,13 +3,16 @@ import { Inter as FontSans } from "next/font/google";
 import "@/styles/globals.css";
 
 import { cn } from "@/lib/utils";
-import AnimatedCursor from "react-animated-cursor";
 import {
   fontBebas,
   fontBreeSerif,
   fontPacifico,
   fontRowdies,
+  fontJakarta,
 } from "@/styles/font";
+import SmoothScrollProvider from "@/providers/SmoothScrollProvider";
+import CustomCursor from "@/components/ui/custom-cursor";
+import ProgressBar from "@/components/ui/progress-bar";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -27,20 +30,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased",
+          "min-h-screen bg-background font-sans antialiased selection:bg-foreground selection:text-background",
           fontSans.variable,
           fontPacifico.variable,
           fontBreeSerif.variable,
-          fontBebas.variable
-          // fontRowdies.variable
+          fontBebas.variable,
+          fontJakarta.variable
         )}
       >
-        {children}
-        <AnimatedCursor />
+        <SmoothScrollProvider>
+          <ProgressBar />
+          <CustomCursor />
+          {children}
+        </SmoothScrollProvider>
       </body>
     </html>
   );
 }
+

@@ -70,13 +70,33 @@
 }
 
 
-.progress-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 5px;
-  background: #ff0000;
-  transform-origin: 0%;
-  z-index: 1000;
+/* Lenis smooth scrolling CSS overrides */
+html.lenis,
+html.lenis body {
+  height: auto;
 }
+
+.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Hide scrollbar for standard browsers */
+::-webkit-scrollbar {
+  display: none;
+}
+html {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}

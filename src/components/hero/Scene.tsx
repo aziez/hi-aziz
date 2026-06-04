@@ -32,8 +32,8 @@ export default function Scene() {
   return (
     // <Canvas linear dpr={3} camera={{ near: 0.1, far: 300, fov: 60 }}>
     <Canvas
-      camera={{ position: [0, 1.5, 3], fov: 50 }}
-      style={{ width: '100vw', height: '100vh' }}
+      camera={{ position: [0, 0.8, 3.8], fov: 50 }}
+      style={{ width: '100%', height: '100%' }}
     >
       {/* <Perf position="top-left" /> */}
 
@@ -58,12 +58,12 @@ export default function Scene() {
         distance={6}
         castShadow
       />
-      <Center position={[0, -2, 0]} scale={0.8}>
+      <Center position={[0, -2, 0]} scale={0.62}>
         <HiAziz play={true} />
       </Center>
 
       <OrbitControls
-        target={[0, -2, 0]}
+        target={[0, -1.2, 0]}
         autoRotate
         minDistance={2}
         maxDistance={2}

@@ -2,61 +2,61 @@ import { Icons } from "@/components/icons";
 import { HomeIcon, NotebookIcon } from "lucide-react";
 
 export const DATA = {
-  name: "M. Abdul Aziz",
+  name: "Muhamad Abdul Aziz",
   initials: "MAA",
   url: "#",
   resumeUrl: "https://1drv.ms/b/s!Am7mTXvg_uCXhOFbGUd3L1NNwZ9uYA?embed=1&em=2",
-  roles: ["Front-End Developer", "Full-Stack JavaScript Developer"],
-  location: "Jakarta, Indonesia",
-  locationLink: "https://www.google.com/maps/place/jakarta",
+  roles: ["Full-Stack Developer", "IT Support Lead"],
+  location: "Jakarta Timur, DKI Jakarta",
+  locationLink: "https://www.google.com/maps/place/Jakarta+East,+East+Jakarta+City,+Jakarta",
   description:
-    "Experienced Full-Stack Developer specializing in Front-End development with Next.js, React, and the Ionic Framework.",
-  summary: `
-  I'm Aziz, a Full-Stack Developer with a degree in Computer Science from Universitas Pamulang. My key areas of expertise include:
-
-  • Front-End Development: Proficient in Next.js, React, TypeScript, and Angular.
-  • Back-End Development: Solid experience with Node.js and database management.
-  • Mobile Development: Skilled in cross-platform app creation using the Ionic framework.
-  • Virtual Reality: Adept at developing immersive experiences with Three.js and A-Frame.
-  • IT Support: Strong background in troubleshooting and network security.
-`,
+    "Strategic Lead Full-Stack Developer specializing in scalable Securities Crowdfunding (SCF) ecosystems, Next.js, and Laravel (TALL stack).",
+  summary: `Strategic Lead Full-Stack Developer specializing in scalable Securities Crowdfunding (SCF) ecosystems. Expert in Next.js, TALL stack, and multi-cloud (GCP/AWS) architectures with a strong focus on OJK/KSEI regulatory compliance. Combines advanced software engineering with AI-driven IoT (YOLO/ANPR) and infrastructure management to deliver secure, high-performance, and mission-critical digital solutions.`,
   avatarUrl: "/me.png",
   professionalSummary: `
-  As a Full-Stack Developer with a degree in Computer Science from Universitas Pamulang, I offer a wide range of expertise in modern web technologies and Virtual Reality development. My capabilities include:
-
-  Web Development:
-  • Expertise in Next.js, TypeScript, HTML, CSS, JavaScript, ReactJS, Ionic, and Angular.
-  • Specialize in creating responsive, dynamic, and user-friendly web applications.
-  • Experienced in performance optimization, SEO, and third-party service integrations.
-
-  Virtual Reality Development:
-  • Skilled in Three.js and A-Frame for building immersive VR experiences.
-  • Developed engaging virtual tours and interactive 3D environments.
-
-  Mobile Development:
-  • Proficient in building cross-platform mobile apps using the Ionic framework.
-
-  IT Support:
-  • Extensive experience in technical troubleshooting, hardware/software management, and network security.
-
-  My diverse skill set allows me to approach complex challenges with efficiency and stay ahead of industry trends. I am committed to delivering top-tier solutions that exceed expectations.
-
-  If you're looking for a versatile Full-Stack Developer with expertise in web technologies, VR development, and IT support, I am ready to contribute my skills to your projects. Thank you for reviewing my profile.
-`,
+  Strategic Lead Full-Stack Developer specializing in scalable Securities Crowdfunding (SCF) ecosystems. Expert in Next.js, TALL stack, and multi-cloud (GCP/AWS) architectures with a strong focus on OJK/KSEI regulatory compliance. Combines advanced software engineering with AI-driven IoT (YOLO/ANPR) and infrastructure management to deliver secure, high-performance, and mission-critical digital solutions.
+  `,
 
   skills: [
-    "Ionic",
-    "React",
     "Next.js",
-    "Typescript",
-    "Javascript",
-    "Node.js",
-    "WebGL",
-    "Postgres",
-    "MongooDB",
-    "MYSQL",
-    "Native Android (Java)",
+    "React.js",
+    "TypeScript",
+    "JavaScript (ES6+)",
+    "Tailwind CSS",
+    "shadcn/ui",
+    "DaisyUI",
+    "Laravel",
+    "PHP",
+    "Prisma ORM",
+    "PostgreSQL",
+    "SQL Server",
+    "MySQL",
+    "RESTful API",
+    "TanStack Query",
+    "Alpine.js",
+    "Livewire",
+    "Inertia.js",
+    "Three.js",
+    "React Three Fiber (R3F)",
+    "Theatre.js",
+    "Pano2VR",
     "Python",
+    "YOLO",
+    "PaddleOCR",
+    "OpenCV",
+    "C#",
+    "RFID SDKs",
+    "Socket Programming",
+    "Ionic Framework",
+    "Capacitor",
+    "Electron",
+    "Java",
+    "Google Cloud Platform (GCP)",
+    "AWS",
+    "Vercel",
+    "Docker",
+    "CI/CD",
+    "Linux/Ubuntu Server"
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
@@ -64,7 +64,7 @@ export const DATA = {
   ],
   contact: {
     email: "Aziz13.id@gmail.com",
-    tell: "+6281514415436",
+    tell: "+6281536333369",
     social: {
       GitHub: {
         name: "GitHub",
@@ -73,73 +73,127 @@ export const DATA = {
       },
       LinkedIn: {
         name: "LinkedIn",
-        url: "https://www.linkedin.com/in/aziez13/",
+        url: "https://www.linkedin.com/in/aziez13",
         icon: Icons.linkedin,
-
         navbar: true,
       },
     },
   },
   work: [
     {
+      company: "Dana Rintis Indonesia",
+      href: "#",
+      badges: [],
+      location: "Jakarta",
+      title: "Senior Full Stack Developer",
+      start: "August 2025",
+      end: "Present",
+      description: "Architect and maintain scalable Securities Crowdfunding (SCF) platforms using the Laravel TALL stack and Next.js. Integrate third-party payment gateways, E-KYC, and digital signature services. Automate reporting modules for OJK and KSEI compliance, and manage AWS deployment pipelines."
+    },
+    {
       company: "Surya Fajar Urun Dana",
       href: "https://sfund.id",
       badges: [],
-      location: "Onsite Jakarta",
-      title: "Front End Developer",
+      location: "Jakarta",
+      title: "Frontend Developer",
       start: "February 2023",
-      end: "present",
-      description:
-        "I develop and maintain web applications using Next.js, React, HTML5, CSS3, and JavaScript. My work includes creating reusable UI components to ensure consistent design across the application, collaborating with design and backend teams to transform UI/UX designs into functional code, and implementing best practices for writing high-quality code, such as linting, testing, and version control. Additionally, I integrate third-party services like e-Sign and payment gateways to enhance application functionality, and I deploy Next.js applications to Ubuntu servers for production use.",
+      end: "August 2025",
+      description: "Developed high-performance financial web applications using Next.js, React, and TypeScript. Maintained the unified UI design system library to accelerate development. Collaborated with UI/UX designers and backend teams, managing GCP deployment lifecycles."
     },
     {
-      company: "Lokcay Studio",
+      company: "Piran Asia Impressa",
+      href: "#",
       badges: [],
-      href: "https://Lokcay.com",
-      location: "Onsite Jakarta",
-      title: "IT Support",
+      location: "Jakarta",
+      title: "IT Support Lead",
       start: "June 2017",
-      end: "January 2023",
-      description:
-        "I provide first-line support for software, hardware, and network issues, assisting employees with computer setup and configuration, including for new hires. I monitor and configure Windows Server to ensure accessibility, perform routine system and network maintenance, and manage network infrastructure, including routers, switches, and firewalls. I also install and configure hardware such as desktops, laptops, and printers, manage software installations and licenses, and configure NAS for efficient data management. Additionally, I maintain detailed IT documentation, create user guides, and develop company profile websites.",
-    },
+      end: "February 2023",
+      description: "Orchestrated end-to-end IT infrastructure for a 3D architectural firm, maintaining Windows Server configurations. Optimized high-speed networks for large-scale asset transfers, managed high-capacity NAS storage, and established internal documentation SOPs."
+    }
   ],
   education: [
     {
-      school: "SMK Al-hikmah 2",
-      href: "https://alhikmah1.or.id/",
-      degree: "Junior Hight School",
-      logoUrl: "/buildspace.jpg",
-      start: "2014",
-      end: "2016",
+      school: "Pamulang University",
+      href: "https://unpam.ac.id",
+      degree: "Master of Computer Science (M.Kom)",
+      logoUrl: "/waterloo.png",
+      start: "February 2026",
+      end: "Present",
+      description: "Focus Areas: Advanced Software Engineering, Data Science, Artificial Intelligence, and Strategic IT Management. Objective: Deepening expertise in architectural scalability and advanced algorithmic solutions to lead complex enterprisegrade digital transformations."
     },
     {
-      school: "University of Pamulang",
+      school: "Pamulang University",
       href: "https://unpam.ac.id",
-      degree: "Bachelor's Degree of Computer Science (BCS)",
+      degree: "Bachelor of Computer Science (S.Kom) - GPA 3.35",
       logoUrl: "/waterloo.png",
-      start: "2018",
-      end: "2022",
-    },
+      start: "August 2018",
+      end: "November 2022",
+      description: "National Professional Certification: Certified as a Professional Programmer by the UNPAM Professional Certification Agency (Cert No: 62010 2514 4 0007015 2022), validating core competencies. Specially selected for Kampus Merdeka at PT GITS Indonesia (520+ Hours) focusing on high-performance Android development. Spearheaded the creation of SmartVille (Java-based mobile application). Recognized under the Indonesian National Qualifications Framework (KKNI Level 6)."
+    }
   ],
   projects: [
+    {
+      title: "Arkana Catering",
+      href: "https://arkana-catering.vercel.app",
+      dates: "2024",
+      active: true,
+      description:
+        "Premium digital catering catalog and ordering platform with custom package calculators, interactive menus, and structured WhatsApp reservation dispatching.",
+      technologies: ["Next.js", "React", "TypeScript", "TailwindCSS", "Framer Motion"],
+      links: [
+        {
+          type: "Website",
+          href: "https://arkana-catering.vercel.app",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/images/portfolio/arkana.png",
+      video: "",
+    },
+    {
+      title: "WordAI",
+      href: "https://wordai.my.id/",
+      dates: "2024",
+      active: true,
+      description:
+        "AI-driven semantic rephrasing and content optimization engine assisting academic writers and SEO copywriters in transforming paragraphs into high-quality text.",
+      technologies: ["Next.js", "React", "TypeScript", "TailwindCSS", "OpenAI API"],
+      links: [
+        {
+          type: "Website",
+          href: "https://wordai.my.id/",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/images/portfolio/wordai.png",
+      video: "",
+    },
+    {
+      title: "Menuku",
+      href: "https://www.menuku.my.id/",
+      dates: "2024",
+      active: true,
+      description:
+        "SaaS platform for digital QR menus and POS Management. Architected for the F&B industry to ensure optimal SEO, type-safe PostgreSQL database operations via Prisma, and optimized caching with TanStack Query.",
+      technologies: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "TanStack Query", "TailwindCSS"],
+      links: [
+        {
+          type: "Website",
+          href: "https://www.menuku.my.id/",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: "/images/portfolio/menuku.png",
+      video: "",
+    },
     {
       title: "Sportify",
       href: "https://sportify.or.id",
       dates: "July 2024 - Present",
       active: true,
       description:
-        "Sportify tackles physical and mental health issues among Millennials and Gen Z, offering a platform to find workout partners and rent sports facilities and equipment. This document outlines the platform’s requirements to guide the engineering team.",
-      technologies: [
-        "Next.js",
-        "Typescript",
-        "Next Auth",
-        "MySQL",
-        "Prisma",
-        "TailwindCSS",
-        "Shadcn UI",
-        "Daisy UI",
-      ],
+        "Sports ecosystem for facility rentals and community engagement. Developed an all-in-one marketplace for facility bookings and equipment rentals, with social matchmaking features.",
+      technologies: ["Next.js", "TypeScript", "Prisma ORM", "MySQL", "Next Auth", "TailwindCSS", "DaisyUI"],
       links: [
         {
           type: "Website",
@@ -151,12 +205,60 @@ export const DATA = {
       video: "",
     },
     {
+      title: "Archipelago Adventure",
+      href: "#",
+      dates: "2024",
+      active: true,
+      description:
+        "Immersive 3D creative experience. Engineered a full 3D world where users navigate a ship across a digital archipelago, utilizing React Three Fiber (R3F), Theatre.js, and Three.js for cinematic rendering.",
+      technologies: ["React Three Fiber", "Three.js", "Theatre.js", "Next.js", "TypeScript"],
+      links: [],
+      image: "/images/portfolio/archipelago.png",
+      video: "",
+    },
+    {
+      title: "Heron",
+      href: "#",
+      dates: "2023",
+      active: true,
+      description:
+        "Immersive VR Virtual Tour application designed for real estate marketing, featuring interactive 360-degree panoramas built with Pano2VR and Ionic, deployed to Android and Windows.",
+      technologies: ["Ionic Framework", "Capacitor", "Electron", "Pano2VR"],
+      links: [],
+      image: "/images/portfolio/heron.png",
+      video: "",
+    },
+    {
+      title: "RFID Desktop Control System",
+      href: "#",
+      dates: "2023",
+      active: true,
+      description:
+        "Desktop middleware application in C# interfacing with RFID hardware for real-time tag detection, database synchronization, and event-driven monitoring via a web dashboard.",
+      technologies: ["C#", ".NET", "RFID SDKs", "Socket Programming", "SQL Server"],
+      links: [],
+      image: "/images/portfolio/rfid.png",
+      video: "",
+    },
+    {
+      title: "Automated Number Plate Recognition System",
+      href: "#",
+      dates: "2023",
+      active: true,
+      description:
+        "AI-driven ANPR system using YOLO for real-time license plate detection, PaddleOCR for character recognition, OpenCV for preprocessing, and hardware-trigger integrations.",
+      technologies: ["Python", "YOLO", "PaddleOCR", "OpenCV"],
+      links: [],
+      image: "/images/portfolio/anpr.png",
+      video: "",
+    },
+    {
       title: "Best Event Solution",
       href: "https://besteventsolution.id/",
       dates: "August 2023 - December 2023",
       active: false,
       description:
-        "Best Event Solutions is an event management skill that helps support and facilitate the work of event organizers to achieve event objectives.Every activity that is held aims to gain benefits for both parties, both the organizers and those present at the time the activity takes place.",
+        "Event management platform facilitating organizers in planning, marketing, and managing large-scale corporate and private activities.",
       technologies: ["Wordpress"],
       links: [
         {
@@ -174,7 +276,7 @@ export const DATA = {
       dates: "January 2024 - Maret 2024",
       active: false,
       description:
-        "The Indonesia Dental Exhibition & Conference (IDEC) is a major event in the dental industry, held every two years in Jakarta. It brings together dental professionals, suppliers, and industry leaders to showcase the latest dental products, technologies, and services. The event features an exhibition, a scientific conference with international speakers, and numerous networking opportunities. IDEC aims to advance the dental field in Indonesia by providing a platform for education, innovation, and professional growth.",
+        "Digital portal for IDEC, a major dental industry exhibition in Jakarta, featuring scientific conference registrations and attendee management.",
       technologies: ["Wordpress"],
       links: [
         {
@@ -192,7 +294,7 @@ export const DATA = {
       dates: "April 2023 - Mei 2023",
       active: false,
       description:
-        "The Work Culture Festival of Bank Indonesia is a place where you can explore and interact with the diversity of cultures and shared values; education; and knowledge about the young culture that exists at Bank Indonesia. Congratulations on exploring and benefiting from it.",
+        "Virtual tour and digital culture exhibition platform for Bank Indonesia, letting visitors explore shared value displays in full 360-degree panoramas.",
       technologies: ["Virtual tour", "Pano2VR"],
       links: [
         {
@@ -210,16 +312,8 @@ export const DATA = {
       dates: "June 2024",
       active: false,
       description:
-        "This project enhances UI updates based on user actions. It was developed as part of a Frontend Mentor challenge to improve coding skills by building real-world applications.",
-      technologies: [
-        "Next.js",
-        "Typescript",
-        "JSON",
-        "Zustand",
-        "TailwindCSS",
-        "Shadcn UI",
-        "Magic UI",
-      ],
+        "E-commerce product list application with client-side state management cart features developed as part of a frontend coding challenge.",
+      technologies: ["Next.js", "TypeScript", "Zustand", "TailwindCSS", "Shadcn UI"],
       links: [
         {
           type: "Website",
@@ -241,7 +335,7 @@ export const DATA = {
       dates: "April 2024",
       active: true,
       description:
-        "Built an IP Address Tracker that uses the IPify API for location data and LeafletJS for map rendering. The goal was to closely match the design challenge on Frontend Mentor.",
+        "IP Address Tracker integrating IPify location API and LeafletJS for responsive geographical map rendering.",
       technologies: ["React.js", "Javascript", "Leaflet", "TailwindCSS"],
       links: [
         {
@@ -264,7 +358,7 @@ export const DATA = {
       dates: "March 2024",
       active: true,
       description:
-        "Developed an advice generator using the Advice Slip API, designed to look as close as possible to the provided design.",
+        "Lightweight generator fetching random quotes and advice from the Advice Slip API.",
       technologies: ["HTML", "Javascript", "TailwindCSS"],
       links: [
         {
@@ -287,7 +381,7 @@ export const DATA = {
       dates: "March 2024",
       active: false,
       description:
-        "Created a URL shortener integrated with the Clean URI API to generate shortened links and display them according to the design challenge.",
+        "Landing page integrating cleanURI shortener API, enabling link caching and responsive management of links.",
       technologies: ["Next.js", "Typescript", "TailwindCSS"],
       links: [
         {
